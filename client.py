@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import socket, sys, time
+import socket, sys
 
 class client:
     def __init__(self):
