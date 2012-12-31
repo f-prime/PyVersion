@@ -1,5 +1,5 @@
 #!/usr/bin/python
-import socket, os, sys
+import socket, os, sys, threading
 
 class server:
     def __init__(self):
@@ -26,7 +26,7 @@ class server:
             except:
                 pass
 
-            self.cmds[data.split()[0]]()
+            threading.Thread(target=self.cmds[data.split()[0]]).start()
 
     def send(self):
         with open(self.file, 'wb') as file:
