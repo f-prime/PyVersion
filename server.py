@@ -38,8 +38,11 @@ class server:
                 file.write(data)
 
     def list(self):
-        self.obj.send(str(os.listdir(os.getcwd())))
+        curdir = os.listdir(os.getcwd())
+        curdir.remove(sys.argv[0])
+        self.obj.send(str(curdir))
         self.obj.close()
+
     def get(self):
         try:
             file = self.data.split()[1]
