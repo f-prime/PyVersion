@@ -26,8 +26,10 @@ class server:
             except:
                 pass
 
-            threading.Thread(target=self.cmds[data.split()[0]]).start()
-
+            try:
+                threading.Thread(target=self.cmds[data.split()[0]]).start()
+            except:
+                pass
     def send(self):
         with open(self.file, 'wb') as file:
             while True:
