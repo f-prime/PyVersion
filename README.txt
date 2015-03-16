@@ -1,4 +1,4 @@
-PyVersion is a simple version control system written in Python.
+PyVersion is a simple way to transfer files remotely.
 
 Usage:
 
